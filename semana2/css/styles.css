@@ -1,5 +1,10 @@
 * {
   box-sizing: border-box;
+  font-family: 'Bitter', serif;
+}
+
+h1 {
+  font-family: 'Macondo', cursive;
 }
 
 section {
