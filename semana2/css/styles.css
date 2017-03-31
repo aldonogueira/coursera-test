@@ -5,12 +5,24 @@
 
 h1 {
   font-family: 'Macondo', cursive;
+  text-align: center;
 }
 
-div {
+.title {
   float: right;
+  clear: left;
   color: darkgrey;
   padding: 10px;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  font-size: 150%;
+}
+
+p {
+  float: left;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-bottom: 5px;
 }
 
 #chicken {
@@ -27,10 +39,14 @@ div {
 
 section {
   float: left;
+}
+
+.inner {
+  margin: 10px;
   background-color: blanchedalmond;
   color: darkgoldenrod;
-  padding: 5px;
-  border: 5px solid white;
+  border: 1px solid black;
+  float: left;
 }
 
 /* Desktop */
