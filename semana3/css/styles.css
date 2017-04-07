@@ -1,0 +1,18 @@
+body {
+  font-size: 16px;
+  color: white;
+  background-color: #61122f;
+}
+
+#header-nav {
+  background-color: #f6b319;
+  border-radius: 0;
+  border: 0;
+}
+
+.navbar-header > a {
+  font-family: 'Lora', serif;
+  font-size: 3em;
+}
+
+
