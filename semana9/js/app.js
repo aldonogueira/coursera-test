@@ -7,10 +7,18 @@
 
   NarrowItDownController.$inject = ['MenuSearchService'];
   function NarrowItDownController(MenuSearchService) {
-    var listPromise = MenuSearchService.getMatchedMenuItems('Chicken');
-    listPromise.then(function(e) {
-      console.log(e);
-    });
+    var controller = this;
+    
+    controller.searchTerm = '';
+    controller.found = [];
+
+    controller.narrowList = function() {
+      var listPromise = MenuSearchService.getMatchedMenuItems(controller.searchTerm);
+      listPromise.then(function(list) {
+        controller.found = list;
+        console.log(list);
+      });
+    }
   }
 
   MenuSearchService.$inject = ['$http'];
