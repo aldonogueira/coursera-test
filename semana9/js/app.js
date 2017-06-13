@@ -11,7 +11,8 @@
       restrict: 'E',
       templateUrl: 'foundItems.html',
       scope: {
-        found: '<foundItems'
+        found: '<foundItems',
+        onRemove: '&'
       }
     };
     return ddo;
@@ -30,6 +31,10 @@
         controller.found = list;
       });
     }
+
+    controller.remove = function(index) {
+      controller.found.splice(index, 1);
+    };
   }
 
   MenuSearchService.$inject = ['$http'];

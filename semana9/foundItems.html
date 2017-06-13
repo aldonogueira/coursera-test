@@ -1,9 +1,7 @@
-<div style='float: left'>
-<ol>
+<ol style='clear: left'>
   <li ng-repeat="item in found">
     {{ item.short_name }}: {{ item.name }} <br/>
     {{ item.description }} <br/>
-    <button ng-click="list.removeItem($index);">Don't want this one!</button>
+    <button ng-click="onRemove({index: $index});">Don't want this one!</button>
   </li>
 </ol>
-</div>
