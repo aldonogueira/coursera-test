@@ -3,12 +3,24 @@
 
   angular.module('NarrowItDownApp', [])
   .controller('NarrowItDownController', NarrowItDownController)
-  .service('MenuSearchService', MenuSearchService);
+  .service('MenuSearchService', MenuSearchService)
+  .directive('foundItems', FoundItems);
+
+  function FoundItems() {
+    var ddo = {
+      restrict: 'E',
+      templateUrl: 'foundItems.html',
+      scope: {
+        found: '<foundItems'
+      }
+    };
+    return ddo;
+  }
 
   NarrowItDownController.$inject = ['MenuSearchService'];
   function NarrowItDownController(MenuSearchService) {
     var controller = this;
-    
+
     controller.searchTerm = '';
     controller.found = [];
 
@@ -16,7 +28,6 @@
       var listPromise = MenuSearchService.getMatchedMenuItems(controller.searchTerm);
       listPromise.then(function(list) {
         controller.found = list;
-        console.log(list);
       });
     }
   }
