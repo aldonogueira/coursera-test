@@ -1,0 +1,6 @@
+<h3>Category: {{ $ctrl.category }}</h3>
+<ol>
+  <li ng-repeat="item in $ctrl.itemsList">
+    {{ item.short_name }}: {{ item.name }}
+  </li>
+</ol>

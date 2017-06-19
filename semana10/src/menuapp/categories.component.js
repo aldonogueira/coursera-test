@@ -14,9 +14,9 @@ function CategoriesComponentController(MenuDataService) {
   $ctrl.categoriesList = [];
 
   MenuDataService.getAllCategories()
-  .then(function(data) {
-    $ctrl.categoriesList = data;
-  });
+    .then(function(data) {
+      $ctrl.categoriesList = data;
+    });
 }
 
 })();
