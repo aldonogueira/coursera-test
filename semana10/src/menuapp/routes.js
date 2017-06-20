@@ -28,10 +28,10 @@ function RoutesConfig($stateProvider, $urlRouterProvider) {
     templateUrl: 'src/menuapp/templates/main-items.template.html',
     controller: 'ItemsController as itemsCtrl',
     resolve: {
-      categoryName: 'A name ???',
-      items: ['MenuDataService', function(MenuDataService) {
-        return MenuDataService.getItemsForCategory(shortName);
-      }]
+      items: ['$stateParams', 'MenuDataService',
+        function($stateParams, MenuDataService) {
+          return MenuDataService.getItemsForCategory($stateParams.shortName);
+        }]
     }
   });
 }
