@@ -3,9 +3,9 @@
 
 angular.module('MenuApp')
 .component('categories', {
-  templateUrl: 'menuapp/templates/categories.template.html',
+  templateUrl: 'src/menuapp/templates/categories.template.html',
   bindings: {
-    categoriesList: '<'
+    items: '<'
   }
 });
 
