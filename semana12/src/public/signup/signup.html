@@ -1,1 +1,45 @@
-<h3>Sign Up</h3>
+<link rel="stylesheet" href="css/signup.css">
+<div class="container">
+  <h2 class="text-center">Sign Up</h2>
+  <fieldset>
+    <form name='signUpForm' novalidate>
+      <input type="text" name="firstname" placeholder="First name"
+        ng-model="firstname" required>
+      <span ng-if="signUpForm.firstname.$error.required
+        && signUpForm.firstname.$touched">
+        Must specify first name
+      </span><br>
+
+      <input type="text" name="lastname" placeholder="Last name"
+        ng-model="lastname" required>
+      <span ng-if="signUpForm.lastname.$error.required
+        && signUpForm.lastname.$touched">
+        Must specify last name
+      </span><br>
+
+      <input type="email" name="email" placeholder="E-mail"
+        ng-model="email" required>
+      <span ng-if="signUpForm.email.$invalid
+        && signUpForm.email.$touched">
+        Must specify a valid email address
+      </span><br>
+
+      <input type="text" name="phone" placeholder="Phone ###-###-####"
+        ng-model="phone">
+      <span ng-if="signUpForm.phone.$invalid
+        && signUpForm.phone.$touched">
+        Must specify phone number in the format ###-###-####
+      </span><br>
+
+      <input type="text" name="favoritedish" placeholder="Favorite dish"
+        ng-model="favoritedish" required>
+      <span ng-if="signUpForm.favoritedish.$error.required
+        && signUpForm.favoritedish.$touched">
+        Must specify a favorite dish
+      </span><br>
+
+      <button ng-disabled="signUpForm.$invalid"
+        ng-click="reg.submit()">Submit</button>
+    </form>
+  </fieldset>
+</div>
