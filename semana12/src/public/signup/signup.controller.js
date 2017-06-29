@@ -4,8 +4,8 @@
 angular.module('public')
 .controller('SignUpController', SignUpController);
 
-SignUpController.$inject = ['$http'];
-function SignUpController($http) {
+SignUpController.$inject = ['$http', 'InfoService'];
+function SignUpController($http, InfoService) {
   var signUpCtrl = this;
 
   signUpCtrl.firstname = null;
@@ -22,6 +22,14 @@ function SignUpController($http) {
       .then(function(result) {
         signUpCtrl.submitted = true;
         signUpCtrl.error = false;
+
+        InfoService.save({
+          firstname: signUpCtrl.firstname,
+          lastname: signUpCtrl.lastname,
+          email: signUpCtrl.email,
+          phone: signUpCtrl.phone,
+          favoritedish: signUpCtrl.favoritedish
+        });
       }).catch(function(){
         signUpCtrl.submitted = false;
         signUpCtrl.error = true;
