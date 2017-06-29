@@ -28,7 +28,7 @@ function SignUpController($http, InfoService) {
           lastname: signUpCtrl.lastname,
           email: signUpCtrl.email,
           phone: signUpCtrl.phone,
-          favoritedish: signUpCtrl.favoritedish
+          favoritedish: result.data
         });
       }).catch(function(){
         signUpCtrl.submitted = false;

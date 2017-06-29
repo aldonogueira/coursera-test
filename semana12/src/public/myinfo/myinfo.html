@@ -7,6 +7,10 @@
     <div>Name: {{myInfoCtrl.userdata.firstname}} {{myInfoCtrl.userdata.lastname}}</div>
     <div>Email: {{myInfoCtrl.userdata.email}}</div>
     <div>Phone: {{myInfoCtrl.userdata.phone}}</div>
-    <div>Favorite dish: {{myInfoCtrl.userdata.favoritedish}}</div>
+    <div>Favorite dish: {{myInfoCtrl.userdata.favoritedish.name}}</div>
+    <div>{{myInfoCtrl.userdata.favoritedish.description}}</div>
+    <div><img width="250" height="150" alt="{{myInfoCtrl.userdata.favoritedish.name}}"
+      ng-src="https://aldo-coursera.herokuapp.com/images/{{myInfoCtrl.userdata.favoritedish.short_name}}.jpg"></img>
+    </div>
   </div>
 </div>
